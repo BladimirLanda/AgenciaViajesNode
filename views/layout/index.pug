@@ -1,0 +1,36 @@
+//Template Engine - Principal
+//Sintaxis declarada HTML
+//Para declarar que una etiqueta se encuentra dentro de otra, se utiliza la indentación
+
+//block: Palabra reservada que hace referencia a un bloque de código hacía un pug heredado.
+//extends: Palabra reservada de extensión de un pug padre.
+//include: Palabra reservada que incluye un archivo pug completo
+
+//Asignación de variables: etiqueta= variable (Espera código JS) / #{variable}
+//Saldo de linea con la misma etiqueta |
+
+//https://tablericons.com/
+//https://html-to-pug.com/
+
+//INDEX
+
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap' rel='stylesheet')
+
+        link(rel="stylesheet", href="/css/bootstrap.css")
+        link(rel="stylesheet", href="/css/style.css")
+        title #{nombreSitio} | #{pagina}
+    body(class= clase)
+        
+        include header
+
+        block slider
+
+        block contenido
+
+        include footer

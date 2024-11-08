@@ -1,0 +1,30 @@
+extends ./layout/index.pug
+
+block contenido
+    main(class="container mt-5")
+        h1(class="text-center mt-5") #{pagina}
+
+        blockquote(class="text-center ") Lee sobre nuestros clientes y sus experiencias
+        include ./layout/block_testimonios.pug
+
+        div(class="row")
+            div(class="col-md-12")
+                h2(class="d-block w-100 text-center") Agrega un Testimonial
+
+                if(error)
+                    div(class='col alert alert-danger text-center')
+                        | #{error}
+
+            div(class="row justify-content-center col")
+                div(class="col-md-8")
+                    form(action="/testimonios", method="POST") 
+                        div(class="form-group")
+                            label(for="nombre") Nombre
+                            input(type="text", id="nombre", name="nombre", placeholder="Tu Nombre" class="form-control", value= nombre)
+                        div(class="form-group")
+                            label(for="correo") Correo Electrónico
+                            input(type="text", id="correo", name="correo", placeholder="Tu Correo" class="form-control", value= correo)
+                        div(class="form-group")
+                            label(for="mensaje") Mensaje
+                            textarea(id="mensaje", name="mensaje", placeholder="Tu Mensaje" ,class="form-control", rows = 3) #{mensaje}
+                        input(type="submit", class="btn btn-success btn-block ")

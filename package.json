@@ -1,0 +1,25 @@
+{
+  "name": "3-proyecto-nodejs",
+  "version": "1.0.0",
+  "description": "Primer Proyecto Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "type": "module",
+  "author": "Bladimir Landa",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "nodemon": "^3.1.7",
+    "npm": "^10.9.0"
+  }
+}
