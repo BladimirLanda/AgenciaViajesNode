@@ -1,12 +1,6 @@
-//CONTROLLERS
-
 import { Viaje } from "../models/Viaje.js";
 import { Testimonio } from "../models/Testimonios.js";
 
-//req: Petición a Express - res: Respuesta de Express
-//.render(): Método de renderizado de vistas
-//{}: El segundo parametro del .render() es un objeto que puede contener variables de entorno
-//send(): Método de impresión en pantalla -> res.send('Inicio');
 const paginaInicio = async (req, res) => {
     const promiseDB = [];
 
@@ -36,9 +30,7 @@ const paginaNosotros = (req, res) => {
 }
 
 const paginaViajes = async (req, res) => {
-    //Consulta DB
     try {
-        //.finAll(): Método busca todos de sequelize
         const viajes = await Viaje.findAll();
 
         res.render('viajes', {
@@ -64,12 +56,9 @@ const paginaTestimonios = async (req, res) => {
 }
 
 const paginaDetalleViaje = async (req, res) => {
-    //req.params: Hace referencia a los parametros establecidos en una URL (:)
     const { viaje } = req.params;
 
-    //Consultas DB
     try {
-        //.finOne(): Método busca uno de sequelize
         const resultado = await Viaje.findOne( {where : { slug: viaje } } );
 
         res.render('viaje', {

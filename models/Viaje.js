@@ -1,11 +1,7 @@
-//MODEL | Viajes
-
 import Sequelize from "sequelize";
 import db from "../config/db.js";
 
-//.define(): Método de definición de la tabla de acceso
 export const Viaje = db.define('viajes', {
-    //id definido por default
     titulo: {
         type: Sequelize.STRING
     },
@@ -27,7 +23,6 @@ export const Viaje = db.define('viajes', {
     disponibles: {
         type: Sequelize.STRING
     },
-    //SLUG: es una parte de un enlace que identifica un contenido específico en una página web
     slug: {
         type: Sequelize.STRING
     }
