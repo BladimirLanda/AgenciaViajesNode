@@ -2,7 +2,7 @@ div(class="row proximos-viajes")
     each viaje in viajes
         div(class="col-md-6 col-lg-4 mb-4")
             div(class="card")
-                img(src=`img/destinos_${viaje.imagen}.jpg`, alt="", class="card-img-top")
+                img(src=`img/destinos_${viaje.imagen}.jpg`, alt=`imagen_${viaje.imagen}`, class="card-img-top")
 
                 div(class="card-body")
                     h2= viaje.titulo
